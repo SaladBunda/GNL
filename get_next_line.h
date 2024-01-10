@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 18:37:56 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/01/07 16:57:34 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/01/08 21:48:34 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(char **s1, char *s2);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 

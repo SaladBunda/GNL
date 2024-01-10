@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:07:31 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/01/07 17:50:27 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/01/08 21:50:14 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,26 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char **s1, char *s2)
 {
 	size_t	length;
 	char	*p;
 	
-	if(s1 == NULL && s2 == NULL)
+	if(*s1 == NULL && s2 == NULL)
         return NULL;
-    else if(s1 == NULL)
+    else if(*s1 == NULL)
         return ft_strdup(s2);
     else if(s2 == NULL)
-        return ft_strdup(s1);
-	length = ft_strlen(s1) + ft_strlen(s2);
+        return ft_strdup(*s1);
+	length = ft_strlen(*s1) + ft_strlen(s2);
 	p = (char *)malloc(sizeof(char) * (length + 1));
 	if (!p)
 		return (NULL);
-	ft_memcpy(&p[0], s1, ft_strlen(s1));
-	ft_memcpy(&p[ft_strlen(s1)], s2, ft_strlen(s2));
+	ft_memcpy(&p[0], *s1, ft_strlen(*s1));
+	ft_memcpy(&p[ft_strlen(*s1)], s2, ft_strlen(s2));
 	p[length] = '\0';
+	free(*s1);
+	*s1 = NULL;
 	return (p);
 }
 
