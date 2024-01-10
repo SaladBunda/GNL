@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:07:31 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/01/08 21:50:14 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:34:54 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (s[count] != '\0')
@@ -79,7 +79,7 @@ char	*ft_strdup(const char *s1)
 	return (p);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+/* char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*p;
@@ -99,4 +99,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_memcpy(&p[0], &s[i], len);
 	p[len] = 0;
 	return (p);
+} */
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *)b)[i++] = (unsigned char) c; 
+	}
+	return (b);
 }

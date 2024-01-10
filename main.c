@@ -26,4 +26,5 @@ int main()
 	str = get_next_line(fd);
 	printf("%s", str);
 	free(str);
+	system("leaks a.out");
 }
