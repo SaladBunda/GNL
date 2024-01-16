@@ -1,30 +1,21 @@
+#include <stdio.h>
+#include <fcntl.h>
 #include "get_next_line.h"
-
 
 int main()
 {
-	char *str;
-	int fd = open("file.txt", O_RDONLY);
-	str = get_next_line(fd);
-	printf("%s", str);
-	free(str);
-	str = get_next_line(fd);
-	printf("%s", str);
-	free(str);
-	str = get_next_line(fd);
-	printf("%s", str);
-	free(str);
-	str = get_next_line(fd);
-	printf("%s", str);
-	free(str);
-	str = get_next_line(fd);
-	printf("%s", str);
-	free(str);
-	str = get_next_line(fd);
-	printf("%s", str);
-	free(str);
-	str = get_next_line(fd);
-	printf("%s", str);
-	free(str);
-	system("leaks a.out");
+	int fd = open("test.txt", O_RDWR);
+	char *s = get_next_line(fd);
+	printf("%s", s);
+	free(s);
+	s = get_next_line(fd);
+	printf("%s", s);
+	free(s);
+	s = get_next_line(fd);
+	printf("%s", s);
+	free(s);
+	s = get_next_line(fd);
+	printf("%s", s);
+
+	free(s);
 }

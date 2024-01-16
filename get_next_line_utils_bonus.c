@@ -1,16 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 15:33:39 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/01/16 16:03:53 by ael-maaz         ###   ########.fr       */
+/*   Created: 2024/01/12 22:51:50 by ael-maaz          #+#    #+#             */
+/*   Updated: 2024/01/16 21:10:33 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <string.h>
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *)b)[i++] = (unsigned char) c; 
+	}
+	return (b);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	ptr = malloc(size * (count));
+	if (!ptr)
+		return (NULL);
+	memset(ptr, 0, size * count);
+	return (ptr);
+}
 
 size_t	ft_strlen(const char *s)
 {
@@ -84,7 +108,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	else if (s2 == NULL)
 		return (ft_strdup(s1));
 	length = ft_strlen(s1) + ft_strlen(s2);
-	p = (char *)calloc(sizeof(char) * (length + 1),1);
+	p = calloc(length + 1,1);
 	if (!p)
 		return (NULL);
 	while (s1[++i])
