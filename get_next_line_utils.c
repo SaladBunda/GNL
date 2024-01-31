@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:33:39 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/01/16 16:03:53 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:19:58 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	else if (s2 == NULL)
 		return (ft_strdup(s1));
 	length = ft_strlen(s1) + ft_strlen(s2);
-	p = (char *)calloc(sizeof(char) * (length + 1),1);
+	p = (char *)malloc(sizeof(char) * (length + 1));
 	if (!p)
 		return (NULL);
 	while (s1[++i])
